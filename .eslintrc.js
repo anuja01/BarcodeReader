@@ -28,6 +28,11 @@ module.exports = {
     "react/jsx-filename-extension": [0],
     "import/extensions": "off",
     "import/no-unresolved": "off",
-    "import/prefer-default-export":"off"
+    "import/prefer-default-export":"off",
+    "react/jsx-curly-newline": "off",
+    "react/state-in-constructor": "off",
+    "react/static-property-placement": "off",
+    "react/static-property-placement": "off",
+    "react/jsx-props-no-spreading": "off"
   },
 };
