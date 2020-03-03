@@ -6,3 +6,6 @@ Implement a bar code scanner for react native
 
 ### Navigation navigation
 https://reactnavigation.org/docs/getting-started
+
+hooks section below
+https://reactnavigation.org/docs/use-navigation

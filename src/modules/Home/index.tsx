@@ -5,6 +5,7 @@ import { HomeTitle } from './styles';
 interface HomeConfig {
   navigation: any;
 }
+
 const Home = (config: HomeConfig) => (
   <View style={{ flex: 1 }}>
     <View>
@@ -15,7 +16,7 @@ const Home = (config: HomeConfig) => (
     </View>
     <Button
       title="Go to Jane's profile"
-      onPress={() => config.navigation.navigate('About', { name: 'Jane' })}
+      onPress={() => config.navigation.navigate('About', { name: 'Jane Jane piti kotapan' })}
     />
   </View>
 );
