@@ -1,14 +1,20 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from '../Home';
-import About from '../About';
+import { stackNavigation } from '../../route';
 
 const Stack = createStackNavigator();
 
 const Landing = () => (
   <Stack.Navigator>
-    <Stack.Screen name="Home" component={Home} />
-    <Stack.Screen name="About" component={About} />
+    {stackNavigation.map((item: any, i: any) => (
+      <Stack.Screen
+        key={i}
+        name={item.name}
+        component={item.component}
+      />
+    ))}
+
   </Stack.Navigator>
 );
 

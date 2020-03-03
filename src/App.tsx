@@ -1,37 +1,32 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react/jsx-filename-extension */
 import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Scanner from './modules/Scanner';
-import Landing from './modules/Landing';
+import { tabNavigation } from './route';
 
-const Tab = createBottomTabNavigator();
+const BottomTabs = createBottomTabNavigator();
 
 function MyTabs() {
   return (
-    <Tab.Navigator
+    <BottomTabs.Navigator
       initialRouteName="Landing"
       tabBarOptions={{
         activeTintColor: '#e91e63',
       }}
     >
-      <Tab.Screen
-        name="Landing"
-        component={Landing}
-        options={{
-          tabBarLabel: 'Landing',
-        }}
-      />
-      <Tab.Screen
-        name="Scanner"
-        component={Scanner}
-        options={{
-          tabBarLabel: 'Scanner',
-        }}
-      />
-    </Tab.Navigator>
+      {tabNavigation.map((item, i) => (
+        <BottomTabs.Screen
+          key={i}
+          name={item.name}
+          component={item.component}
+          options={item.options}
+        />
+      ))}
+
+    </BottomTabs.Navigator>
   );
 }
 const App = () => (
