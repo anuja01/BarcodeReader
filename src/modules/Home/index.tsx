@@ -5,6 +5,7 @@ import { HomeTitle } from './styles';
 interface HomeConfig {
   navigation: any;
 }
+
 const Home = (config: HomeConfig) => (
   <View style={{ flex: 1 }}>
     <View>

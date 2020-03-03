@@ -2,19 +2,41 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Home from './modules/Home';
-import About from './modules/About';
+import Scanner from './modules/Scanner';
+import Landing from './modules/Landing';
 
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
+function MyTabs() {
+  return (
+    <Tab.Navigator
+      initialRouteName="Landing"
+      tabBarOptions={{
+        activeTintColor: '#e91e63',
+      }}
+    >
+      <Tab.Screen
+        name="Landing"
+        component={Landing}
+        options={{
+          tabBarLabel: 'Landing',
+        }}
+      />
+      <Tab.Screen
+        name="Scanner"
+        component={Scanner}
+        options={{
+          tabBarLabel: 'Scanner',
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
 const App = () => (
   <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="About" component={About} />
-    </Stack.Navigator>
+    {MyTabs()}
   </NavigationContainer>
 );
 
