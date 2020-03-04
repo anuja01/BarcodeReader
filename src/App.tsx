@@ -4,34 +4,36 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import { tabNavigation } from './route';
+// bind the context
+import { Provider } from './context';
 
 const BottomTabs = createBottomTabNavigator();
 
-function MyTabs() {
-  return (
-    <BottomTabs.Navigator
-      initialRouteName="Landing"
-      tabBarOptions={{
-        activeTintColor: '#e91e63',
-      }}
-    >
-      {tabNavigation.map((item, i) => (
-        <BottomTabs.Screen
-          key={i}
-          name={item.name}
-          component={item.component}
-          options={item.options}
-        />
-      ))}
+const AppTabs = () => (
+  <BottomTabs.Navigator
+    initialRouteName="Landing"
+    tabBarOptions={{
+      activeTintColor: '#e91e63',
+    }}
+  >
+    {tabNavigation.map((item, i) => (
+      <BottomTabs.Screen
+        key={i}
+        name={item.name}
+        component={item.component}
+        options={item.options}
+      />
+    ))}
 
-    </BottomTabs.Navigator>
-  );
-}
+  </BottomTabs.Navigator>
+);
+
 const App = () => (
   <NavigationContainer>
-    {MyTabs()}
+    <Provider>
+      {AppTabs()}
+    </Provider>
   </NavigationContainer>
 );
 
