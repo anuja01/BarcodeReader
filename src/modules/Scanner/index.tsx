@@ -4,6 +4,13 @@ import {
 } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 
+interface BarcodeProps {
+  barcodes: [],
+}
+interface RenderBarcodeProps {
+  bounds: Object,
+  data: Object
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -20,15 +27,16 @@ export const BarcodeScanner = () => {
   const [barcodesRead, setBarcodes] = React.useState([]);
   const cameraRef = useRef(null);
 
-  function barcodeRecognized({ barcodes }) {
-    setBarcodes(barcodes);
+  function barcodeRecognized(props: BarcodeProps) {
+    setBarcodes(props.barcodes);
   }
 
   function openURL(url: string) {
     Linking.openURL(url).catch((err) => console.error('An error occurred', err));
   }
 
-  function renderBarcode({ bounds, data }) {
+  function renderBarcode(props: RenderBarcodeProps) {
+    const { data, bounds } = props;
     return (
       <React.Fragment key={data + bounds.origin.x}>
         <View
