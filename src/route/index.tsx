@@ -1,6 +1,6 @@
 
 import Landing from '../modules/Landing';
-import BarcodeScanner from '../modules/Scanner';
+import { BarcodeScanner } from '../modules/Scanner';
 import Home from '../modules/Home';
 import About from '../modules/About';
 

@@ -1,5 +1,4 @@
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React, { useRef } from 'react';
 import {
   View, StyleSheet, Text, Linking,
 } from 'react-native';
@@ -16,73 +15,68 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
-class BarcodeScanner extends Component {
-  state = {
-    barcodes: [],
+
+export const BarcodeScanner = () => {
+  const [barcodesRead, setBarcodes] = React.useState([]);
+  const cameraRef = useRef(null);
+
+  function barcodeRecognized({ barcodes }) {
+    setBarcodes(barcodes);
   }
 
-  barcodeRecognized = ({ barcodes }) => {
-    this.setState({ barcodes });
-  }
-
-  openURL = (url) => {
+  function openURL(url: string) {
     Linking.openURL(url).catch((err) => console.error('An error occurred', err));
   }
 
-  renderBarcode = ({ bounds, data }) => (
-    <React.Fragment key={data + bounds.origin.x}>
-      <View
-        style={{
-          borderWidth: 2,
-          borderRadius: 10,
-          position: 'absolute',
-          borderColor: '#F00',
-          justifyContent: 'center',
-          backgroundColor: 'rgba(255, 255, 255, 0.9)',
-          height: bounds.size.height,
-          width: bounds.size.width + 50,
-          left: bounds.origin.x,
-          top: bounds.origin.y,
-        }}
-      >
-        <Text
+  function renderBarcode({ bounds, data }) {
+    return (
+      <React.Fragment key={data + bounds.origin.x}>
+        <View
           style={{
-            color: '#F00',
-            flex: 1,
+            borderWidth: 2,
+            borderRadius: 10,
             position: 'absolute',
-            textAlign: 'center',
-            backgroundColor: 'transparent',
+            borderColor: '#F00',
+            justifyContent: 'center',
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            height: bounds.size.height,
+            width: bounds.size.width + 50,
+            left: bounds.origin.x,
+            top: bounds.origin.y,
           }}
-          onPress={() => this.openURL('https://apps.apple.com/sg/app/mocha-tn5250/id521454323?mt=12')}
         >
-          open app
-        </Text>
-      </View>
-    </React.Fragment>
+          <Text
+            style={{
+              color: '#F00',
+              flex: 1,
+              position: 'absolute',
+              textAlign: 'center',
+              backgroundColor: 'transparent',
+            }}
+            onPress={() => openURL('https://apps.apple.com/sg/app/mocha-tn5250/id521454323?mt=12')}
+          >
+            open app
+          </Text>
+        </View>
+      </React.Fragment>
+    );
+  }
+
+  function renderBarcodes() {
+    return (
+      <View>{(barcodesRead && barcodesRead.length !== 0) && barcodesRead.map(renderBarcode)}</View>
+    );
+  }
+
+  return (
+    <View style={styles.container}>
+      <RNCamera
+        ref={cameraRef}
+        style={styles.scanner}
+        onGoogleVisionBarcodesDetected={barcodeRecognized}
+      >
+        {renderBarcodes()}
+      </RNCamera>
+    </View>
   );
-
-  renderBarcodes = () => {
-    const { barcodes } = this.state;
-    return (
-      <View>{barcodes.map(this.renderBarcode)}</View>
-    );
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <RNCamera
-          ref={(ref) => {
-            this.camera = ref;
-          }}
-          style={styles.scanner}
-          onGoogleVisionBarcodesDetected={this.barcodeRecognized}
-        >
-          {this.renderBarcodes()}
-        </RNCamera>
-      </View>
-    );
-  }
-}
-
-export default BarcodeScanner;
+};
