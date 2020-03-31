@@ -5,7 +5,7 @@ import { stackNavigation } from '../../route';
 
 const Stack = createStackNavigator();
 
-const Landing = () => (
+const Main = () => (
   <Stack.Navigator>
     {stackNavigation.map((item: any, i: any) => (
       <Stack.Screen
@@ -18,4 +18,4 @@ const Landing = () => (
   </Stack.Navigator>
 );
 
-export default Landing;
+export default Main;

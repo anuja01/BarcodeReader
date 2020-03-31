@@ -1,15 +1,15 @@
 
-import Landing from '../modules/Landing';
+import Main from '../modules/Main';
 import { BarcodeScanner } from '../modules/Scanner';
 import Home from '../modules/Home';
 import About from '../modules/About';
 
 export const tabNavigation = [
   {
-    name: 'Landing',
-    component: Landing,
+    name: 'Main',
+    component: Main,
     options: {
-      tabBarLabel: 'Landing',
+      tabBarLabel: 'Main',
     },
   },
   {
