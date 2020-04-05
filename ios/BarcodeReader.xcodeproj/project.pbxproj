@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* BarcodeReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* BarcodeReaderTests.m */; };
+		0AD7854724385435006B4B93 /* ios in Resources */ = {isa = PBXBuildFile; fileRef = 0AD7854624385434006B4B93 /* ios */; };
+		0AD785492438544F006B4B93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AD785482438544E006B4B93 /* GoogleService-Info.plist */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -15,7 +17,6 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* BarcodeReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* BarcodeReaderTests.m */; };
 		751FD3212410A56A00D4E08A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 751FD3202410A56A00D4E08A /* Default-568h@2x.png */; };
-		7572300624120535008697D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7572300524120535008697D2 /* GoogleService-Info.plist */; };
 		831AFBDE022625F01A08A24B /* libPods-BarcodeReader-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6AE82FE9A72C8DEBAA5F4F /* libPods-BarcodeReader-tvOS.a */; };
 		CCD3E1CC444216C59083F32F /* libPods-BarcodeReader-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F641ECA2C05FCDF465AB6F /* libPods-BarcodeReader-tvOSTests.a */; };
 		E750611DA8EE087F1A6668AC /* libPods-BarcodeReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F391944C4633FE1C4CEEBA86 /* libPods-BarcodeReader.a */; };
@@ -46,6 +47,8 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* BarcodeReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarcodeReaderTests.m; sourceTree = "<group>"; };
 		01498C4783A3CEF4E91B185C /* Pods-BarcodeReader-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarcodeReader-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-BarcodeReader-tvOS/Pods-BarcodeReader-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		0AD7854624385434006B4B93 /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ios; sourceTree = "<group>"; };
+		0AD785482438544E006B4B93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* BarcodeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarcodeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = BarcodeReader/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = BarcodeReader/AppDelegate.m; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				0AD785482438544E006B4B93 /* GoogleService-Info.plist */,
+				0AD7854624385434006B4B93 /* ios */,
 				751FD3202410A56A00D4E08A /* Default-568h@2x.png */,
 				13B07FAE1A68108700A75B9A /* BarcodeReader */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -333,15 +338,16 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = Q6M6RMB2C5;
+						DevelopmentTeam = D9396HC732;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = Q6M6RMB2C5;
+						DevelopmentTeam = D9396HC732;
 						ProvisioningStyle = Automatic;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = D9396HC732;
 						ProvisioningStyle = Automatic;
 					};
 					2D02E48F1E0B4A5D006451C7 = {
@@ -384,8 +390,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AD7854724385435006B4B93 /* ios in Resources */,
+				0AD785492438544F006B4B93 /* GoogleService-Info.plist in Resources */,
 				751FD3212410A56A00D4E08A /* Default-568h@2x.png in Resources */,
-				7572300624120535008697D2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,7 +638,7 @@
 			baseConfigurationReference = B27FE306F911DBD7B37470F7 /* Pods-BarcodeReaderTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = Q6M6RMB2C5;
+				DEVELOPMENT_TEAM = D9396HC732;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -656,7 +663,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = Q6M6RMB2C5;
+				DEVELOPMENT_TEAM = D9396HC732;
 				INFOPLIST_FILE = BarcodeReaderTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -680,7 +687,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = Q6M6RMB2C5;
+				DEVELOPMENT_TEAM = D9396HC732;
 				INFOPLIST_FILE = BarcodeReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -688,7 +695,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.BarcodeReaderDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.BarcodeReaderDemoUD;
 				PRODUCT_NAME = BarcodeReader;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -703,7 +710,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Q6M6RMB2C5;
+				DEVELOPMENT_TEAM = D9396HC732;
 				INFOPLIST_FILE = BarcodeReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -711,7 +718,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.BarcodeReaderDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.BarcodeReaderDemoUD;
 				PRODUCT_NAME = BarcodeReader;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -729,6 +736,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = D9396HC732;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "BarcodeReader-tvOS/Info.plist";
@@ -738,7 +746,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.BarcodeReader-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.BarcodeReader-tvOSUD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -758,6 +766,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = D9396HC732;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "BarcodeReader-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -766,7 +775,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.BarcodeReader-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.BarcodeReader-tvOSUD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;

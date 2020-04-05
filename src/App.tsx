@@ -6,7 +6,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { tabNavigation } from './route';
 // bind the context
-import { Provider } from './context';
+import { ContextProvider } from './context';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
 
 const BottomTabs = createBottomTabNavigator();
 
@@ -31,8 +34,10 @@ const AppTabs = () => (
 
 const App = () => (
   <NavigationContainer>
-    <Provider>
-      {AppTabs()}
+    <Provider store={store}>
+      <ContextProvider>
+        {AppTabs()}
+      </ContextProvider>
     </Provider>
   </NavigationContainer>
 );

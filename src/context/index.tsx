@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Context = React.createContext({});
 interface Children { children: JSX.Element }
-export const Provider = (params: Children) => (
+export const ContextProvider = (params: Children) => (
   <Context.Provider
     value={{ name: 'Anuja' }}
   >
