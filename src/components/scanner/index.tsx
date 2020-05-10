@@ -5,11 +5,11 @@ import {
 import { RNCamera } from 'react-native-camera';
 
 interface BarcodeProps {
-  barcodes: [],
+  barcodes: [];
 }
 interface RenderBarcodeProps {
-  bounds: Object,
-  data: Object
+  bounds: Object;
+  data: Object;
 }
 const styles = StyleSheet.create({
   container: {
@@ -61,7 +61,10 @@ export const BarcodeScanner = () => {
               textAlign: 'center',
               backgroundColor: 'transparent',
             }}
-            onPress={() => openURL('https://apps.apple.com/sg/app/mocha-tn5250/id521454323?mt=12')}
+            onPress={() => openURL(
+              'https://apps.apple.com/sg/app/mocha-tn5250/id521454323?mt=12',
+            )
+            }
           >
             open app
           </Text>
@@ -72,7 +75,11 @@ export const BarcodeScanner = () => {
 
   function renderBarcodes() {
     return (
-      <View>{(barcodesRead && barcodesRead.length !== 0) && barcodesRead.map(renderBarcode)}</View>
+      <View>
+        {barcodesRead
+          && barcodesRead.length !== 0
+          && barcodesRead.map(renderBarcode)}
+      </View>
     );
   }
 

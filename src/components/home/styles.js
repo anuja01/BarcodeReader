@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { Text, View } from 'react-native';
 
 export const HomeTitle = styled(Text)`
-    color: green;
-    font-size: 20px;
+  color: green;
+  font-size: 20px;
 `;
 
 export const HomeContainer = styled(View)`
-    marginTop: 250px;
+  margintop: 250px;
 `;
