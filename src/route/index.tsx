@@ -1,8 +1,8 @@
 
-import Landing from '../modules/Landing';
-import { BarcodeScanner } from '../modules/Scanner';
-import Home from '../modules/Home';
-import About from '../modules/About';
+import Landing from '../components/landing';
+import { BarcodeScanner } from '../components/scanner';
+import Home from '../components/home';
+import About from '../components/about';
 
 export const tabNavigation = [
   {
